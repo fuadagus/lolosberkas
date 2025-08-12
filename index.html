@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Wawancara KKN Buteng 2025/2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #2d5a3d;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,0.1) 15px, rgba(255,255,255,0.1) 30px),
+                repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(255,255,255,0.08) 15px, rgba(255,255,255,0.08) 30px);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Diamond Pattern Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255,255,255,0.15) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.15) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.15) 75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 0 0, 30px 30px, 30px 30px;
+            z-index: -1;
+            animation: patternFloat 25s ease-in-out infinite;
+        }
+        
+        @keyframes patternFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+        
+        .container {
+            max-width: 450px;
+            margin: 20px auto;
+            background: #4a7c59;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            animation: containerSlideUp 1.2s ease-out;
+            position: relative;
+            min-height: 90vh;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        @keyframes containerSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Story Header with Progress Bar */
+        .story-header {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .story-indicator {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .story-indicator::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #fff, #f0f0f0);
+            border-radius: 2px;
+            animation: storyProgress 8s linear infinite;
+        }
+        
+        @keyframes storyProgress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+        
+        /* Announcement Header */
+        .announcement-header {
+            background: rgba(255, 255, 255, 0.95);
+            color: #2d5a3d;
+            padding: 25px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            animation: headerBounceIn 1.8s ease-out 0.5s both;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .announcement-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(45, 90, 61, 0.1), transparent);
+            animation: headerRotate 8s linear infinite;
+        }
+        
+        @keyframes headerRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .announcement-header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #2d5a3d, #4a7c59);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .announcement-header h2 {
+            font-size: 15px;
+            color: #666;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes headerBounceIn {
+            from {
+                opacity: 0;
+                transform: scale(0.3) translateY(-100px) rotate(-10deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1) translateY(-20px) rotate(2deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0) rotate(0deg);
+            }
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            background: linear-gradient(135deg, #4a6fa5, #6b8dd6);
+            margin: 20px;
+            border-radius: 25px;
+            padding: 30px 20px;
+            color: white;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: contentSlideIn 1.5s ease-out 1s both;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: contentRipple 8s linear infinite;
+        }
+        
+        @keyframes contentRipple {
+            0% { transform: scale(0) rotate(0deg); }
+            100% { transform: scale(1.5) rotate(360deg); }
+        }
+        
+        @keyframes contentSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotateY(45deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg);
+            }
+        }
+        
+        .content-header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content-header h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes textGlow {
+            from { text-shadow: 0 3px 6px rgba(0,0,0,0.4); }
+            to { text-shadow: 0 3px 6px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.3); }
+        }
+        
+        .stats-info {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            backdrop-filter: blur(15px);
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .stats-number {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes numberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .stats-label {
+            font-size: 14px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        /* Schedule Grid */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 8px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .schedule-grid::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .schedule-grid::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        
+        .schedule-grid::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+        
+        .schedule-grid::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .schedule-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: 40px 1fr 1fr 2fr;
+            gap: 12px;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            animation: scheduleSlideIn 0.8s ease-out both;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .schedule-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .schedule-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(8px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .schedule-item:hover::before {
+            left: 100%;
+        }
+        
+        .schedule-number {
+            background: rgba(255, 255, 255, 0.4);
+            color: #2d5a3d;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 8px;
+            border-radius: 50%;
+            text-align: center;
+            min-width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .schedule-time {
+            font-weight: 600;
+            font-size: 13px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        
+        .schedule-name {
+            font-weight: 600;
+            font-size: 14px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes scheduleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px) rotateY(45deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg);
+            }
+        }
+        
+        /* Bottom Decoration */
+        .bottom-decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 140px;
+            background: linear-gradient(135deg, #2d5a3d 0%, #4a7c59 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 25px;
+            border-top: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .decoration-character {
+            font-size: 65px;
+            animation: characterBounce 3s ease-in-out infinite, characterRotate 6s linear infinite;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+        }
+        
+        @keyframes characterBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        @keyframes characterRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .footer-message {
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            line-height: 1.4;
+            max-width: 250px;
+        }
+        
+        /* Stagger animations for schedule items */
+        .schedule-item:nth-child(1) { animation-delay: 1.5s; }
+        .schedule-item:nth-child(2) { animation-delay: 1.6s; }
+        .schedule-item:nth-child(3) { animation-delay: 1.7s; }
+        .schedule-item:nth-child(4) { animation-delay: 1.8s; }
+        .schedule-item:nth-child(5) { animation-delay: 1.9s; }
+        .schedule-item:nth-child(6) { animation-delay: 2.0s; }
+        .schedule-item:nth-child(7) { animation-delay: 2.1s; }
+        .schedule-item:nth-child(8) { animation-delay: 2.2s; }
+        .schedule-item:nth-child(9) { animation-delay: 2.3s; }
+        .schedule-item:nth-child(10) { animation-delay: 2.4s; }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                min-height: 95vh;
+            }
+            
+            .announcement-header {
+                margin: 15px;
+                padding: 20px 15px;
+            }
+            
+            .announcement-header h1 {
+                font-size: 22px;
+                letter-spacing: 1px;
+            }
+            
+            .announcement-header h2 {
+                font-size: 14px;
+            }
+            
+            .main-content {
+                margin: 15px;
+                padding: 25px 15px;
+            }
+            
+            .content-header h3 {
+                font-size: 18px;
+            }
+            
+            .stats-number {
+                font-size: 36px;
+            }
+            
+            .schedule-item {
+                padding: 12px;
+                grid-template-columns: 35px 1fr 1fr 1.8fr;
+                gap: 8px;
+            }
+            
+            .schedule-number {
+                min-width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
+            .schedule-time, .schedule-name {
+                font-size: 12px;
+            }
+            
+            .decoration-character {
+                font-size: 50px;
+            }
+            
+            .footer-message {
+                font-size: 13px;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Story-style header with progress bar -->
+        <div class="story-header">
+            <div class="story-indicator"></div>
+        </div>
+        
+        <!-- Announcement Header -->
+        <div class="announcement-header">
+            <h1>Announcement</h1>
+            <h2>Tim KKN-PPM UGM Periode A Buton Tengah</h2>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-header">
+                <h3>JADWAL WAWANCARA SELEKSI</h3>
+            </div>
+            
+            <div class="stats-info">
+                <div class="stats-number">28</div>
+                <div class="stats-label">Peserta Terjadwal</div>
+            </div>
+
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <div class="schedule-number">1</div>
+                    <div class="schedule-time">9:00</div>
+                    <div class="schedule-time">9:10</div>
+                    <div class="schedule-name">Nurul Asfiyah</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">2</div>
+                    <div class="schedule-time">9:10</div>
+                    <div class="schedule-time">9:20</div>
+                    <div class="schedule-name">Nirmala Sagita Dewi</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">3</div>
+                    <div class="schedule-time">9:20</div>
+                    <div class="schedule-time">9:30</div>
+                    <div class="schedule-name">Tiara Ardelia</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">4</div>
+                    <div class="schedule-time">9:30</div>
+                    <div class="schedule-time">9:40</div>
+                    <div class="schedule-name">Vincentia Carissa Rosi Amaria</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">5</div>
+                    <div class="schedule-time">9:40</div>
+                    <div class="schedule-time">9:50</div>
+                    <div class="schedule-name">Adityas Januarivansyah Juanda</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">6</div>
+                    <div class="schedule-time">9:50</div>
+                    <div class="schedule-time">10:00</div>
+                    <div class="schedule-name">Bagas saputro</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">7</div>
+                    <div class="schedule-time">10:00</div>
+                    <div class="schedule-time">10:10</div>
+                    <div class="schedule-name">RR chalis Audia Fajar Dini</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">8</div>
+                    <div class="schedule-time">10:10</div>
+                    <div class="schedule-time">10:20</div>
+                    <div class="schedule-name">Faizal Ilham Ibrahim</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">9</div>
+                    <div class="schedule-time">10:20</div>
+                    <div class="schedule-time">10:30</div>
+                    <div class="schedule-name">Bimo Adjie Laksono</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">10</div>
+                    <div class="schedule-time">10:30</div>
+                    <div class="schedule-time">10:40</div>
+                    <div class="schedule-name">Melisa Uvictoria</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">11</div>
+                    <div class="schedule-time">10:40</div>
+                    <div class="schedule-time">10:50</div>
+                    <div class="schedule-name">Elsadita Annisa Putri</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">12</div>
+                    <div class="schedule-time">10:50</div>
+                    <div class="schedule-time">11:00</div>
+                    <div class="schedule-name">Fikri Khoirul Umar</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">13</div>
+                    <div class="schedule-time">11:00</div>
+                    <div class="schedule-time">11:10</div>
+                    <div class="schedule-name">Muhammad Lutfi aqeela</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">14</div>
+                    <div class="schedule-time">11:10</div>
+                    <div class="schedule-time">11:20</div>
+                    <div class="schedule-name">Kayla Aura Sakinadhia Irstiadi</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">15</div>
+                    <div class="schedule-time">11:20</div>
+                    <div class="schedule-time">11:30</div>
+                    <div class="schedule-name">Dhea Ulhaq</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">16</div>
+                    <div class="schedule-time">11:30</div>
+                    <div class="schedule-time">11:40</div>
+                    <div class="schedule-name">Aline Kartika Nurhidayat</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">17</div>
+                    <div class="schedule-time">11:50</div>
+                    <div class="schedule-time">12:00</div>
+                    <div class="schedule-name">Fazila Nayyara Dahayu</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">18</div>
+                    <div class="schedule-time">12:00</div>
+                    <div class="schedule-time">12:10</div>
+                    <div class="schedule-name">Nailah Hana Farihah</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">19</div>
+                    <div class="schedule-time">12:10</div>
+                    <div class="schedule-time">12:20</div>
+                    <div class="schedule-name">Afriel Nazawah Alhabsy</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">20</div>
+                    <div class="schedule-time">12:20</div>
+                    <div class="schedule-time">12:30</div>
+                    <div class="schedule-name">Qonita Hafidha</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">21</div>
+                    <div class="schedule-time">12:30</div>
+                    <div class="schedule-time">12:40</div>
+                    <div class="schedule-name">Asy Resky Winati</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">22</div>
+                    <div class="schedule-time">12:40</div>
+                    <div class="schedule-time">12:50</div>
+                    <div class="schedule-name">Nayla Maritza Saputri</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">23</div>
+                    <div class="schedule-time">12:50</div>
+                    <div class="schedule-time">13:00</div>
+                    <div class="schedule-name">Christina Andin Rahma Kinanti</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">24</div>
+                    <div class="schedule-time">13:00</div>
+                    <div class="schedule-time">13:10</div>
+                    <div class="schedule-name">Amarily Diva Azzahra</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">25</div>
+                    <div class="schedule-time">13:10</div>
+                    <div class="schedule-time">13:20</div>
+                    <div class="schedule-name">Salma Arsya Putri</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">26</div>
+                    <div class="schedule-time">13:20</div>
+                    <div class="schedule-time">13:30</div>
+                    <div class="schedule-name">Maria Esagrata setiawardani</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">27</div>
+                    <div class="schedule-time">13:30</div>
+                    <div class="schedule-time">13:40</div>
+                    <div class="schedule-name">Salma Salsabila</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-number">28</div>
+                    <div class="schedule-time">13:40</div>
+                    <div class="schedule-time">13:50</div>
+                    <div class="schedule-name">Aiken Gimnastiar</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Decoration -->
+        <div class="bottom-decoration">
+            <div class="decoration-character">📅</div>
+            <div class="footer-message">
+                Harap datang tepat waktu sesuai jadwal yang telah ditentukan
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add loading animation delay for table rows
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach((row, index) => {
+                if (index > 4) {
+                    row.style.animationDelay = (1.5 + (index - 4) * 0.05) + 's';
+                }
+            });
+            
+            // Add sparkle effect
+            function createSparkle() {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'fixed';
+                sparkle.style.width = '4px';
+                sparkle.style.height = '4px';
+                sparkle.style.background = '#667eea';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '1000';
+                sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                sparkle.style.top = '-10px';
+                sparkle.style.animation = 'fall 3s linear forwards';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 3000);
+            }
+            
+            // Add CSS for falling sparkles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Create sparkles periodically
+            setInterval(createSparkle, 2000);
+        });
+    </script>
+
+</body>
+</html>
