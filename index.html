@@ -516,19 +516,16 @@
         <!-- Announcement Header -->
         <div class="announcement-header">
             <h1>Announcement</h1>
-            <h2>Tim KKN-PPM UGM Periode A Buton Tengah</h2>
+            <h2>Tim KKN-PPM UGM Periode IV Buton Tengah</h2>
         </div>
 
         <!-- Main Content Area -->
         <div class="main-content">
             <div class="content-header">
-                <h3>JADWAL WAWANCARA SELEKSI</h3>
+                <h3>JADWAL SELEKSI WAWANCARA</h3>
             </div>
             
-            <div class="stats-info">
-                <div class="stats-number">28</div>
-                <div class="stats-label">Peserta Terjadwal</div>
-            </div>
+   
 
             <div class="schedule-grid">
                 <div class="schedule-item">
@@ -700,62 +697,146 @@
                     <div class="schedule-name">Aiken Gimnastiar</div>
                 </div>
             </div>
+            <div class="stats-info">
+                <p>Bagi yang lolos ke tahap wawancara harap bergabung ke grup <a href="https://chat.whatsapp.com/DYy6hZQsdb1I847FZ9T40l?mode=ac_t">WhatsApp</a></p>
+            </div>
         </div>
 
         <!-- Bottom Decoration -->
-        <div class="bottom-decoration">
+        <!-- <div class="bottom-decoration">
             <div class="decoration-character">📅</div>
             <div class="footer-message">
                 Harap datang tepat waktu sesuai jadwal yang telah ditentukan
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script>
-        // Add loading animation delay for table rows
         document.addEventListener('DOMContentLoaded', function() {
-            const rows = document.querySelectorAll('tbody tr');
-            rows.forEach((row, index) => {
-                if (index > 4) {
-                    row.style.animationDelay = (1.5 + (index - 4) * 0.05) + 's';
+            // Animate schedule items with enhanced staggered delays
+            const scheduleItems = document.querySelectorAll('.schedule-item');
+            scheduleItems.forEach((item, index) => {
+                if (index > 9) {
+                    item.style.animationDelay = (1.5 + (index - 9) * 0.03) + 's';
                 }
             });
             
-            // Add sparkle effect
-            function createSparkle() {
-                const sparkle = document.createElement('div');
-                sparkle.style.position = 'fixed';
-                sparkle.style.width = '4px';
-                sparkle.style.height = '4px';
-                sparkle.style.background = '#667eea';
-                sparkle.style.borderRadius = '50%';
-                sparkle.style.pointerEvents = 'none';
-                sparkle.style.zIndex = '1000';
-                sparkle.style.left = Math.random() * window.innerWidth + 'px';
-                sparkle.style.top = '-10px';
-                sparkle.style.animation = 'fall 3s linear forwards';
+            // Add floating particles effect
+            function createFloatingParticle() {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = '6px';
+                particle.style.height = '6px';
+                particle.style.background = 'rgba(255,255,255,0.6)';
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '1000';
+                particle.style.left = Math.random() * window.innerWidth + 'px';
+                particle.style.top = window.innerHeight + 'px';
+                particle.style.animation = 'floatUp 4s linear forwards';
                 
-                document.body.appendChild(sparkle);
+                document.body.appendChild(particle);
                 
                 setTimeout(() => {
-                    sparkle.remove();
-                }, 3000);
+                    particle.remove();
+                }, 4000);
             }
             
-            // Add CSS for falling sparkles
+            // Enhanced floating animation for decoration character
+            const decorationChar = document.querySelector('.decoration-character');
+            if (decorationChar) {
+                let angle = 0;
+                setInterval(() => {
+                    angle += 0.02;
+                    const floatY = Math.sin(angle) * 8;
+                    const floatX = Math.cos(angle * 0.7) * 3;
+                    decorationChar.style.transform = `translate(${floatX}px, ${floatY}px) rotate(${Math.sin(angle * 2) * 5}deg)`;
+                }, 50);
+            }
+            
+            // Add CSS for floating particles
             const style = document.createElement('style');
             style.textContent = `
-                @keyframes fall {
-                    to {
-                        transform: translateY(100vh) rotate(360deg);
+                @keyframes floatUp {
+                    0% {
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 0.8;
+                    }
+                    50% {
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translateY(-100vh) rotate(360deg);
                         opacity: 0;
+                    }
+                }
+                
+                @keyframes shimmerEffect {
+                    0%, 100% {
+                        background-position: -200% 0;
+                    }
+                    50% {
+                        background-position: 200% 0;
                     }
                 }
             `;
             document.head.appendChild(style);
             
-            // Create sparkles periodically
-            setInterval(createSparkle, 2000);
+            // Create floating particles periodically
+            setInterval(createFloatingParticle, 1500);
+            
+            // Add ripple effect on schedule item interaction
+            scheduleItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    const ripple = document.createElement('div');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255, 255, 255, 0.4);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: rippleExpand 0.8s ease-out;
+                        pointer-events: none;
+                    `;
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 800);
+                });
+            });
+            
+            // Enhanced ripple animation
+            const rippleStyle = document.createElement('style');
+            rippleStyle.textContent = `
+                @keyframes rippleExpand {
+                    to {
+                        transform: scale(2.5);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(rippleStyle);
+            
+            // Add smooth scroll behavior to schedule grid
+            const scheduleGrid = document.querySelector('.schedule-grid');
+            if (scheduleGrid) {
+                scheduleGrid.addEventListener('wheel', function(e) {
+                    e.preventDefault();
+                    this.scrollTop += e.deltaY * 0.6;
+                });
+            }
         });
     </script>
 
